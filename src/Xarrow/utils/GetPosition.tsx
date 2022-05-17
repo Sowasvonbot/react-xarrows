@@ -104,7 +104,7 @@ export const getPosition = (xProps: useXarrowPropsResType, mainRef: React.Mutabl
 
   if (cu === 0) {
     // in case of straight path
-    let headAngel = Math.atan(absDy / absDx);
+    let headAngel = absDx === 0 ? Math.atan(absDy) : Math.atan(absDy / absDx);
 
     if (showHead) {
       x2 -= fHeadSize * (1 - headOffset) * xSign * Math.cos(headAngel);
